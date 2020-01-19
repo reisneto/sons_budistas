@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function PlayButton({ children }) {
-  return <PlayButtonStyle><Icon src="/assets/playIcon.svg" />{children}</PlayButtonStyle>
+  return <PlayButtonStyle><Icon name='iconPlay' />{children}</PlayButtonStyle>
 }
 
 const PlayButtonStyle = styled.div`
@@ -18,7 +18,7 @@ const PlayButtonStyle = styled.div`
   padding: 1.5rem 0;
   border: .1rem solid;
 
-  img{
+  span {
     margin-right: 1rem;
   }
 `;
