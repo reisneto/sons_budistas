@@ -7,5 +7,7 @@ export default function ({ children }) {
 
 const Header = styled.h1`
   text-align: center;
+  font-size: 3rem;
+  padding: 1rem;
   background-color: #730202;
 `;

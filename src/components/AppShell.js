@@ -17,8 +17,9 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #ffffff;
+  color: #F2F2F2;
   box-sizing: border-box;
+  background-color: #4D0202;
 }
 
 #root {
