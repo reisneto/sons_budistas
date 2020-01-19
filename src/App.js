@@ -1,12 +1,13 @@
 import React from 'react';
 import Main from './pages/Main';
-import './App.css';
+import AppShell from './components/AppShell';
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <AppShell />
       <Main />
-    </div>
+    </>
   );
 }
 
