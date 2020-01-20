@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "11269aeb1bdcf509e2ec9d3d7c053d80",
+    "revision": "4e30b71d8d4af387a9f6c0eab2fcf911",
     "url": "/sons_budistas/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sons_budistas/static/js/2.91b2cf14.chunk.js.LICENSE"
   },
   {
-    "revision": "b3bc6d0d8df6d068b78a",
-    "url": "/sons_budistas/static/js/main.355a22b6.chunk.js"
+    "revision": "e9cffb88e0c4d048a004",
+    "url": "/sons_budistas/static/js/main.9f4f8d41.chunk.js"
   },
   {
     "revision": "e50bb9063372aa1a43e4",
