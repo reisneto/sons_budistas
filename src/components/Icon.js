@@ -9,9 +9,9 @@ const iconSize = css`
 const getIconSrc = css`
 ${({ name }) => {
     if (name === 'iconPlay')
-      return `background-image: url(/assets/playIcon.svg);`
+      return `background-image: url(./assets/playIcon.svg);`
     else if (name === 'iconPlay--white')
-      return `background-image: url(/assets/playIcon--white.svg);`
+      return `background-image: url(./assets/playIcon--white.svg);`
     else
       return `background-color: black`;
   }}
