@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { black } from 'ansi-colors';
 
 const iconSize = css`
   width: ${props => props.medium ? `6rem` : `4.5rem`};
