@@ -1,26 +1,23 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useContext } from 'react';
+import { CurrentTrackContext } from '../pages/Main';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-export default function ({ soundTrackInfo }) {
-  const soundTrackRef = useRef(new Audio('./assets/audios/prece7linhas20min.mp3'));
-
-  const [soundPlayerMetadata, setSoundPlayerMetadata] = useState({
-    ended: false,
-    paused: true
-  });
+export default function () {
+  const { paused, togglePaused, src } = useContext(CurrentTrackContext);
+  const soundTrackRef = useRef(new Audio(src));
 
   function playSoundTrack(soundTrackRefCurrent) {
     if (soundTrackRefCurrent) {
       soundTrackRefCurrent.ended && soundTrackRefCurrent.load();
       soundTrackRefCurrent.play();
-      setSoundPlayerMetadata(prev => ({ ...prev, paused: false }));
+      togglePaused(paused => !paused);
     }
   }
   function pauseSoundTrack(soundTrackRefCurrent) {
     if (soundTrackRefCurrent) {
       soundTrackRefCurrent.pause();
-      setSoundPlayerMetadata(prev => ({ ...prev, paused: true }));
+      togglePaused(paused => !paused);
     }
   }
 
@@ -30,7 +27,7 @@ export default function ({ soundTrackInfo }) {
   }
 
   return <SoundPlayer>
-    <Icon onClick={() => toggleSoundTrack(soundTrackRef.current)} name={soundPlayerMetadata.paused ? 'iconPlay--white' : 'iconPause'} />
+    <Icon onClick={() => toggleSoundTrack(soundTrackRef.current)} name={paused ? 'iconPlay--white' : 'iconPause'} />
     <span>Prece das 7 linhas</span>
     <span>01:23</span>
   </SoundPlayer>
