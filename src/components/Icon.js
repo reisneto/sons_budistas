@@ -11,6 +11,8 @@ ${({ name }) => {
       return `background-image: url(./assets/playIcon.svg);`
     else if (name === 'iconPlay--white')
       return `background-image: url(./assets/playIcon--white.svg);`
+    else if (name === 'iconPause')
+      return `background-image: url(./assets/iconPause.svg);`
     else
       return `background-color: black`;
   }}
