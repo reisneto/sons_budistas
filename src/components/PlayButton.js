@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CurrentTrackContext } from '../pages/Main';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-export default function PlayButton({ children }) {
+export default function PlayButton({ item, children }) {
+  const { ref } = useContext(CurrentTrackContext);
   return <PlayButtonStyle><Icon name='iconPlay' />{children}</PlayButtonStyle>
 }
 

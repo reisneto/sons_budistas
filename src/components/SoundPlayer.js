@@ -1,33 +1,32 @@
-import React, { useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CurrentTrackContext } from '../pages/Main';
 import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function () {
-  const { paused, togglePaused, src } = useContext(CurrentTrackContext);
-  const soundTrackRef = useRef(new Audio(src));
+  const { paused, togglePaused, src, soundPlayerRef } = useContext(CurrentTrackContext);
 
-  function playSoundTrack(soundTrackRefCurrent) {
-    if (soundTrackRefCurrent) {
-      soundTrackRefCurrent.ended && soundTrackRefCurrent.load();
-      soundTrackRefCurrent.play();
+  function playSoundTrack(soundPlayerRefCurrent) {
+    if (soundPlayerRefCurrent) {
+      soundPlayerRefCurrent.ended && soundPlayerRefCurrent.load();
+      soundPlayerRefCurrent.play();
       togglePaused(paused => !paused);
     }
   }
-  function pauseSoundTrack(soundTrackRefCurrent) {
-    if (soundTrackRefCurrent) {
-      soundTrackRefCurrent.pause();
+  function pauseSoundTrack(soundPlayerRefCurrent) {
+    if (soundPlayerRefCurrent) {
+      soundPlayerRefCurrent.pause();
       togglePaused(paused => !paused);
     }
   }
 
-  function toggleSoundTrack(soundTrackRefCurrent) {
-    if (soundTrackRefCurrent)
-      soundTrackRefCurrent.paused ? playSoundTrack(soundTrackRefCurrent) : pauseSoundTrack(soundTrackRefCurrent);
+  function toggleSoundTrack(soundPlayerRefCurrent) {
+    if (soundPlayerRefCurrent)
+      soundPlayerRefCurrent.paused ? playSoundTrack(soundPlayerRefCurrent) : pauseSoundTrack(soundPlayerRefCurrent);
   }
 
   return <SoundPlayer>
-    <Icon onClick={() => toggleSoundTrack(soundTrackRef.current)} name={paused ? 'iconPlay--white' : 'iconPause'} />
+    <Icon onClick={() => toggleSoundTrack(soundPlayerRef.current)} name={paused ? 'iconPlay--white' : 'iconPause'} />
     <span>Prece das 7 linhas</span>
     <span>01:23</span>
   </SoundPlayer>
