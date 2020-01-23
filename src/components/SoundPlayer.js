@@ -1,41 +1,36 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function ({ soundTrackInfo }) {
-  const soundTrack = useRef(new Audio());
+  const soundTrackRef = useRef(new Audio('./assets/audios/prece7linhas20min.mp3'));
 
-  useEffect(() => {
-    console.log('assign src...');
-    soundTrack.current.src = './assets/audios/prece7linhas20min.mp3';
-    soundTrack.current.load();
-  }, [])
+  const [soundPlayerMetadata, setSoundPlayerMetadata] = useState({
+    ended: false,
+    paused: true
+  });
 
-  useEffect(() => {
-    console.log('current changes');
-  }, [soundTrack.current])
-
-  function playSoundTrack(soundRef) {
-    console.log('playSoundTrack');
-    if (soundRef) {
-      soundRef.ended && soundRef.load();
-      soundRef.play();
+  function playSoundTrack(soundTrackRefCurrent) {
+    if (soundTrackRefCurrent) {
+      soundTrackRefCurrent.ended && soundTrackRefCurrent.load();
+      soundTrackRefCurrent.play();
+      setSoundPlayerMetadata(prev => ({ ...prev, paused: false }));
     }
   }
-  function pauseSoundTrack(soundRef) {
-    console.log('pauseSoundTrack');
-    if (soundRef)
-      soundRef.pause()
+  function pauseSoundTrack(soundTrackRefCurrent) {
+    if (soundTrackRefCurrent) {
+      soundTrackRefCurrent.pause();
+      setSoundPlayerMetadata(prev => ({ ...prev, paused: true }));
+    }
   }
 
-  function toggleSoundTrack(soundRef) {
-    console.log('toggleSoundTrack');
-    if (soundRef)
-      soundRef.paused ? playSoundTrack(soundRef) : pauseSoundTrack(soundRef);
+  function toggleSoundTrack(soundTrackRefCurrent) {
+    if (soundTrackRefCurrent)
+      soundTrackRefCurrent.paused ? playSoundTrack(soundTrackRefCurrent) : pauseSoundTrack(soundTrackRefCurrent);
   }
 
   return <SoundPlayer>
-    <Icon onClick={() => toggleSoundTrack(soundTrack.current)} name={soundTrack.current.paused ? 'iconPlay--white' : 'iconPause'} />
+    <Icon onClick={() => toggleSoundTrack(soundTrackRef.current)} name={soundPlayerMetadata.paused ? 'iconPlay--white' : 'iconPause'} />
     <span>Prece das 7 linhas</span>
     <span>01:23</span>
   </SoundPlayer>
