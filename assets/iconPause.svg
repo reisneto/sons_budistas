@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 130 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1587.15,-1755.07)">
+        <g transform="matrix(1,0,0,1,1538,0)">
+            <g transform="matrix(0.881864,0,0,0.90629,-233.469,163.413)">
+                <g id="stopButton">
+                    <ellipse cx="394.1" cy="1827.88" rx="72.574" ry="70.618" style="fill:none;"/>
+                    <clipPath id="_clip1">
+                        <ellipse cx="394.1" cy="1827.88" rx="72.574" ry="70.618"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip1)">
+                        <g id="stopFigure" transform="matrix(1.13396,0,0,1.1034,210.224,-182.781)">
+                            <g transform="matrix(0.860976,0,0,0.994462,-1252.9,9.95382)">
+                                <rect x="1626.31" y="1797.24" width="11.615" height="50.278" style="fill:rgb(242,183,49);"/>
+                            </g>
+                            <g transform="matrix(0.860976,0,0,0.994462,-1233.21,9.95382)">
+                                <rect x="1626.31" y="1797.24" width="11.615" height="50.278" style="fill:rgb(242,183,49);"/>
+                            </g>
+                        </g>
+                    </g>
+                    <ellipse cx="394.1" cy="1827.88" rx="72.574" ry="70.618" style="fill:none;stroke:rgb(242,183,49);stroke-width:2.07px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
