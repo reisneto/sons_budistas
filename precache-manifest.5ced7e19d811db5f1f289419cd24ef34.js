@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "63dda431073215b856e010d216f080b2",
+    "revision": "6f94546cf9e8c952da213e92a4761f52",
     "url": "/sons_budistas/index.html"
   },
   {
