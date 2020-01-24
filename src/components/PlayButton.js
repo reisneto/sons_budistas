@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function PlayButton({ item, children }) {
-  const { id, soundPlayerRef, paused, togglePaused } = useContext(CurrentTrackContext);
-  return <PlayButtonStyle onClick={() => console.log(item.id)}><Icon onClick={() => soundPlayerManager.toggleSoundTrack(soundPlayerRef.current, togglePaused, id, item)} name={soundPlayerManager.isPlayIcon(id, paused, item.id) ? 'iconPlay' : 'iconPause'} />{children}</PlayButtonStyle>
+  const { currentTrackMetadata, setCurrentTrackMetadata } = useContext(CurrentTrackContext);
+  const { activeItem, soundPlayerRef } = currentTrackMetadata;
+  return <PlayButtonStyle><Icon onClick={() => soundPlayerManager.toggleSoundTrack(currentTrackMetadata, setCurrentTrackMetadata, item)} name={soundPlayerManager.isPlayIcon(activeItem, soundPlayerRef.current.paused, item.id) ? 'playIcon' : 'iconPause'} />{children}</PlayButtonStyle>
 }
 
 const PlayButtonStyle = styled.div`

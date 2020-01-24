@@ -6,20 +6,18 @@ import SoundPlayer from '../components/SoundPlayer';
 export const CurrentTrackContext = createContext(null);
 
 function CurrentTrackProvider(props) {
-  const [paused, togglePaused] = useState(true);
+  // const [paused, togglePaused] = useState(true);
   const defaultSrc = './assets/audios/prece7linhas20min.mp3';
   const soundPlayerRef = useRef(new Audio(defaultSrc));
 
-  const currentTrackMetadata = {
-    id: 1,
+  const [currentTrackMetadata, setCurrentTrackMetadata] = useState({
+    activeItem: 1,
     ended: false,
-    src: defaultSrc,
-    paused,
-    togglePaused,
+    paused: true,
     soundPlayerRef
-  };
+  });
 
-  return <CurrentTrackContext.Provider value={currentTrackMetadata} {...props}></CurrentTrackContext.Provider>
+  return <CurrentTrackContext.Provider value={{ currentTrackMetadata, setCurrentTrackMetadata }} {...props}></CurrentTrackContext.Provider>
 }
 
 export default function Main() {

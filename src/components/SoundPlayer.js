@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function () {
-  const { paused, togglePaused, soundPlayerRef } = useContext(CurrentTrackContext);
+  const { currentTrackMetadata, setCurrentTrackMetadata } = useContext(CurrentTrackContext);
 
   return <SoundPlayer>
-    <Icon onClick={() => soundPlayerManager.toggleSoundTrack(soundPlayerRef.current, togglePaused)} name={paused ? 'iconPlay--white' : 'iconPause'} />
+    <Icon onClick={() => soundPlayerManager.toggleSoundTrack(currentTrackMetadata, setCurrentTrackMetadata)} name={currentTrackMetadata.soundPlayerRef.current.paused ? 'playIcon--white' : 'iconPause--white'} />
     <span>Prece das 7 linhas</span>
     <span>01:23</span>
   </SoundPlayer>

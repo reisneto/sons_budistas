@@ -22,34 +22,33 @@ export default {
     togglePaused(false);
   },
 
-  toggleSoundTrack: function (soundPlayerRefCurrent, togglePaused, currentId, item) {
-    console.log('currentId', currentId);
-    if (currentId !== +item.id) {
-      console.log(`button ref needed to change button icon`);
-      this.startSoundTrack(soundPlayerRefCurrent, togglePaused, item);
-    } else {
+  toggleSoundTrack: function (currentTrackMetadata, setCurrentTrackMetadata, item = null) {
+    const newCurrentTrackMetadata = { ...currentTrackMetadata };
+    const itemId = item ? +item.id : null;
 
-      soundPlayerRefCurrent.id = item.id;
+    if (itemId && currentTrackMetadata.activeItem !== itemId) {
+      newCurrentTrackMetadata.activeItem = itemId;
+      newCurrentTrackMetadata.soundPlayerRef.current.src = `./assets/audios/${item.src}`;
+      currentTrackMetadata.soundPlayerRef.current.load();
+      currentTrackMetadata.soundPlayerRef.current.play();
+    } else {//soundPlayer or list
+      newCurrentTrackMetadata.activeItem = item ? item.id : newCurrentTrackMetadata.activeItem;
       //check if it started
-      if (!soundPlayerRefCurrent.ended && soundPlayerRefCurrent.paused) {//not played yet
-        soundPlayerRefCurrent.src = `./assets/audios/${item.src}`;
-        soundPlayerRefCurrent.load();
-        soundPlayerRefCurrent.play();
-        togglePaused(false);
-      } else if (!soundPlayerRefCurrent.ended && !soundPlayerRefCurrent.paused) {//playing
-        this.pauseSoundTrack(soundPlayerRefCurrent, togglePaused);
+      if (!currentTrackMetadata.soundPlayerRef.current.ended && currentTrackMetadata.soundPlayerRef.current.paused) {//not played yet --> playing
+        currentTrackMetadata.soundPlayerRef.current.play();
+      } else if (!currentTrackMetadata.soundPlayerRef.current.ended && !currentTrackMetadata.soundPlayerRef.current.paused) {//playing --> pause
+        newCurrentTrackMetadata.soundPlayerRef.current.pause();
       }
-      else if (soundPlayerRefCurrent.ended && soundPlayerRefCurrent.paused) {
-        this.playSoundTrack(soundPlayerRefCurrent, togglePaused);
-      } else {
-        // this.pauseSoundTrack(soundPlayerRefCurrent, togglePaused);
-        return;
+      else if (currentTrackMetadata.soundPlayerRef.current.ended && currentTrackMetadata.soundPlayerRef.current.paused) { //ended --> not played yet
+        newCurrentTrackMetadata.soundPlayerRef.current.src = `./assets/audios/${item.src}`;
+        currentTrackMetadata.soundPlayerRef.current.load();
       }
     }
+    setCurrentTrackMetadata({ ...newCurrentTrackMetadata });
   },
 
-  isPlayIcon: function (currentSoundId, paused, itemId) {
-    if (itemId !== currentSoundId) return true; //when soundTrack is not being played
+  isPlayIcon: function (activeItem, paused, itemId) {
+    if (itemId !== activeItem) return true; //when soundTrack is not being played
     return paused; //when soundTrack is active, check if its paused
   }
 }
