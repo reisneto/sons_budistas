@@ -1,32 +1,14 @@
 import React, { useContext } from 'react';
 import { CurrentTrackContext } from '../pages/Main';
+import soundPlayerManager from '../utils/soundPlayerManager';
 import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function () {
-  const { paused, togglePaused, src, soundPlayerRef } = useContext(CurrentTrackContext);
-
-  function playSoundTrack(soundPlayerRefCurrent) {
-    if (soundPlayerRefCurrent) {
-      soundPlayerRefCurrent.ended && soundPlayerRefCurrent.load();
-      soundPlayerRefCurrent.play();
-      togglePaused(paused => !paused);
-    }
-  }
-  function pauseSoundTrack(soundPlayerRefCurrent) {
-    if (soundPlayerRefCurrent) {
-      soundPlayerRefCurrent.pause();
-      togglePaused(paused => !paused);
-    }
-  }
-
-  function toggleSoundTrack(soundPlayerRefCurrent) {
-    if (soundPlayerRefCurrent)
-      soundPlayerRefCurrent.paused ? playSoundTrack(soundPlayerRefCurrent) : pauseSoundTrack(soundPlayerRefCurrent);
-  }
+  const { paused, togglePaused, soundPlayerRef } = useContext(CurrentTrackContext);
 
   return <SoundPlayer>
-    <Icon onClick={() => toggleSoundTrack(soundPlayerRef.current)} name={paused ? 'iconPlay--white' : 'iconPause'} />
+    <Icon onClick={() => soundPlayerManager.toggleSoundTrack(soundPlayerRef.current, togglePaused)} name={paused ? 'iconPlay--white' : 'iconPause'} />
     <span>Prece das 7 linhas</span>
     <span>01:23</span>
   </SoundPlayer>

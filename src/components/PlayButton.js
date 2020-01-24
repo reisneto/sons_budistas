@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { CurrentTrackContext } from '../pages/Main';
+import soundPlayerManager from '../utils/soundPlayerManager';
 import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function PlayButton({ item, children }) {
-  const { ref } = useContext(CurrentTrackContext);
-  return <PlayButtonStyle><Icon name='iconPlay' />{children}</PlayButtonStyle>
+  const { id, soundPlayerRef, paused, togglePaused } = useContext(CurrentTrackContext);
+  return <PlayButtonStyle onClick={() => console.log(item.id)}><Icon onClick={() => soundPlayerManager.toggleSoundTrack(soundPlayerRef.current, togglePaused, id, item)} name={soundPlayerManager.isPlayIcon(id, paused, item.id) ? 'iconPlay' : 'iconPause'} />{children}</PlayButtonStyle>
 }
 
 const PlayButtonStyle = styled.div`
