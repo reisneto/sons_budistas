@@ -1,16 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { CurrentTrackContext } from '../pages/Main';
 import soundPlayerManager from '../utils/soundPlayerManager';
+import timeFormatter from '../utils/timeFormatter';
 import styled from 'styled-components';
 import Icon from './Icon';
 
 export default function () {
   const { currentTrackMetadata, setCurrentTrackMetadata } = useContext(CurrentTrackContext);
+  const [currentTime, setCurrentTime] = useState(currentTrackMetadata.soundPlayerRef.current.currentTime);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(timeFormatter(currentTrackMetadata.soundPlayerRef.current.duration, currentTrackMetadata.soundPlayerRef.current.currentTime));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return <SoundPlayer>
     <Icon onClick={() => soundPlayerManager.toggleSoundTrack(currentTrackMetadata, setCurrentTrackMetadata)} name={currentTrackMetadata.soundPlayerRef.current.paused ? 'playIcon--white' : 'iconPause--white'} />
     <span>Prece das 7 linhas</span>
-    <span>01:23</span>
+    <span>{currentTime}</span>
   </SoundPlayer>
 }
 
