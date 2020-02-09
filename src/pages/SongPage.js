@@ -11,7 +11,7 @@ export default function Song({ songPage, setSongPage }) {
       onClick={() => setSongPage(prev => ({ ...prev, isActive: !prev.isActive }))}
       name={'iconClose--white'}
     />
-    <p className='paragraph'>{songPage.item.description}</p>
+    <pre className='paragraph'>{songPage.item.description}</pre>
     <SoundPlayer />
   </SongStyle>
 }
@@ -22,16 +22,22 @@ const SongStyle = styled.div`
   height: 100%;
   position: absolute;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   left: 0;
   top: 0;
   z-index: 10;
   transition: transform .4s;
-  transform: translateX(${ props => props.isActive ? '0' : '100%'});
+  transform: translateX(${ props => props.isActive ? '0' : '200vw'});
   .paragraph {
-    width: 450px;
-    font-size: 2rem;
+    max-width: 500px;
+    width: 100%;
+    font-size: 1.2rem;
     align-self: center;
+    justify-self: center;
+    font-family: fantasy;
+    line-height: 3rem;
+    padding: 10px;
+    letter-spacing: 1px;
   }
 `;
 

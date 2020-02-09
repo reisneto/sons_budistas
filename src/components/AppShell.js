@@ -25,5 +25,9 @@ body {
 #root {
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 `;

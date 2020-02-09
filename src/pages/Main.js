@@ -1,9 +1,8 @@
 import React, { createContext, useState, useRef } from 'react';
-import Header from '../components/Header';
-import PlayButton from '../components/PlayButton';
-import SoundPlayer from '../components/SoundPlayer';
 import songs from '../data/songs.json';
 import SongPage from './SongPage';
+import AppShell from '../components/AppShell';
+import SongsListPage from './SongListPage';
 
 export const CurrentTrackContext = createContext(null);
 
@@ -26,16 +25,9 @@ function CurrentTrackProvider(props) {
 export default function Main() {
   const [songPage, setSongPage] = useState({ isActive: false, item: { ...songs.data[0] } });
 
-  return <>
-    <CurrentTrackProvider>
-      <Header>Sons Budistas</Header>
-      <div>
-        {songs.data.map(song =>
-          <PlayButton setSongPage={setSongPage} key={song.id} item={song}>{song.title}</PlayButton>
-        )}
-      </div>
-      <SoundPlayer />
-      <SongPage songPage={songPage} setSongPage={setSongPage} />
-    </CurrentTrackProvider>
-  </>;
+  return <CurrentTrackProvider>
+    <AppShell />
+    <SongsListPage setSongPage={setSongPage} songs={songs} />
+    <SongPage songPage={songPage} setSongPage={setSongPage} />
+  </CurrentTrackProvider>
 }
