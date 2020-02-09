@@ -11,9 +11,20 @@ ${({ name }) => {
   }}
 `;
 
+const closeIcon = css`
+${ ({ close }) => {
+    return close ? `
+    position: absolute;
+    top: 12px;
+    right: 10px;
+  ` : '';
+  }}
+`;
+
 export default styled.span`
   ${iconSize}
   display: inline-block;
   background-size: cover;
   ${getIconSrc}
+  ${closeIcon}
 `;
