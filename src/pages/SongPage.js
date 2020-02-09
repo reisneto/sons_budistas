@@ -19,7 +19,7 @@ export default function Song({ songPage, setSongPage }) {
 const SongStyle = styled.div`
   background-color: #4D0202;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   display: flex;
   flex-flow: column wrap;
