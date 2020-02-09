@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 130 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-249.002,-1375.7)">
+        <g transform="matrix(1,0,0,1,915.853,-0.920833)">
+            <g id="playButton" transform="matrix(1,0,0,1,-695.997,-369.283)">
+                <g transform="matrix(0.881864,0,0,0.90629,-253.469,154.242)">
+                    <ellipse cx="394.1" cy="1827.88" rx="72.574" ry="70.618" style="fill:none;stroke:rgb(242,242,242);stroke-width:2.07px;"/>
+                </g>
+                <g transform="matrix(2.88345,0,0,2.53218,-1306.91,-1866.75)">
+                    <path d="M491.095,1442.49L494.52,1446.39L489.296,1452.34L494.52,1458.29L491.095,1462.19L485.871,1456.24L480.647,1462.19L477.223,1458.29L482.447,1452.34L477.223,1446.39L480.647,1442.49L485.871,1448.44L491.095,1442.49Z" style="fill:rgb(242,242,242);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
