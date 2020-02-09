@@ -14,7 +14,7 @@ export default function () {
       setCurrentTime(timeFormatter(currentTrackMetadata.soundPlayerRef.current.duration, currentTrackMetadata.soundPlayerRef.current.currentTime));
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [currentTrackMetadata.soundPlayerRef]);
 
   return <SoundPlayer>
     <Icon onClick={() => soundPlayerManager.toggleSoundTrack(currentTrackMetadata, setCurrentTrackMetadata)} name={currentTrackMetadata.soundPlayerRef.current.paused ? 'playIcon--white' : 'iconPause--white'} />

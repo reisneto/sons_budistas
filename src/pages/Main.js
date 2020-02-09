@@ -11,7 +11,7 @@ function CurrentTrackProvider(props) {
   const soundPlayerRef = useRef(new Audio(defaultSrc));
 
   const [currentTrackMetadata, setCurrentTrackMetadata] = useState({
-    activeItem: 1,
+    activeItem: { id: 1, src: 'prece7linhas20min.mp3' },
     ended: false,
     paused: true,
     soundPlayerRef
