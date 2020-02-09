@@ -11,7 +11,7 @@ function CurrentTrackProvider(props) {
   const soundPlayerRef = useRef(new Audio(defaultSrc));
 
   const [currentTrackMetadata, setCurrentTrackMetadata] = useState({
-    activeItem: { id: 1, src: 'prece7linhas20min.mp3' },
+    activeItem: { id: 1, src: 'prece7linhas20min.mp3', title: 'Prece das 7 linhas' },
     ended: false,
     paused: true,
     soundPlayerRef
@@ -25,10 +25,10 @@ export default function Main() {
     <Header>Sons Budistas</Header>
     <CurrentTrackProvider>
       <div>
-        <PlayButton item={{ id: 1, src: 'prece7linhas20min.mp3' }}>Prece das 7 Linhas</PlayButton>
-        <PlayButton item={{ id: 2, src: 'bensound-summer.mp3' }}>Prece das 7 Linhas</PlayButton>
-        <PlayButton item={{ id: 3, src: 'bensound-summer.mp3' }}>Prece das 7 Linhas</PlayButton>
-        <PlayButton item={{ id: 4, src: 'bensound-summer.mp3' }}>Prece das 7 Linhas</PlayButton>
+        <PlayButton item={{ id: 1, src: 'prece7linhas20min.mp3', title: 'Prece das 7 linhas' }}>Prece das 7 Linhas</PlayButton>
+        <PlayButton item={{ id: 2, src: 'bensound-summer.mp3', title: 'song 1' }}>Song 1</PlayButton>
+        <PlayButton item={{ id: 3, src: 'bensound-summer.mp3', title: 'song 2' }}>Song 2</PlayButton>
+        <PlayButton item={{ id: 4, src: 'bensound-summer.mp3', title: 'song 3' }}>Song 3</PlayButton>
       </div>
       <SoundPlayer />
     </CurrentTrackProvider>

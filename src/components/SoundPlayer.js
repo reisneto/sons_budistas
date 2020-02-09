@@ -18,7 +18,7 @@ export default function () {
 
   return <SoundPlayer>
     <Icon onClick={() => soundPlayerManager.toggleSoundTrack(currentTrackMetadata, setCurrentTrackMetadata)} name={currentTrackMetadata.soundPlayerRef.current.paused ? 'playIcon--white' : 'iconPause--white'} />
-    <span>Prece das 7 linhas</span>
+    <span>{currentTrackMetadata.activeItem.title}</span>
     <span>{currentTime}</span>
   </SoundPlayer>
 }
