@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../components/Header';
-import SoundPlayer from '../components/SoundPlayer';
 import Icon from '../components/Icon';
 
 export default function Song({ songPage, setSongPage }) {
@@ -12,14 +11,14 @@ export default function Song({ songPage, setSongPage }) {
       name={'iconClose--white'}
     />
     <pre className='paragraph'>{songPage.item.description}</pre>
-    <SoundPlayer />
   </SongStyle>
 }
 
 const SongStyle = styled.div`
   background-color: #4D0202;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
   position: absolute;
   display: flex;
   flex-flow: column wrap;
@@ -32,8 +31,7 @@ const SongStyle = styled.div`
     max-width: 500px;
     width: 100%;
     font-size: 1.2rem;
-    align-self: center;
-    justify-self: center;
+    text-align: center;
     font-family: fantasy;
     line-height: 3rem;
     padding: 10px;

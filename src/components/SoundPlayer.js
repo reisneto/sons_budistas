@@ -29,7 +29,7 @@ const SoundPlayer = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-
+  z-index: 100;
   background-color: #690101;
   color: #F2F2F2;
   justify-content: space-between;
