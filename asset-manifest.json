@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/sons_budistas/static/js/main.c2aa6a81.chunk.js",
-    "main.js.map": "/sons_budistas/static/js/main.c2aa6a81.chunk.js.map",
+    "main.js": "/sons_budistas/static/js/main.027d40a0.chunk.js",
+    "main.js.map": "/sons_budistas/static/js/main.027d40a0.chunk.js.map",
     "runtime-main.js": "/sons_budistas/static/js/runtime-main.bba4a0b5.js",
     "runtime-main.js.map": "/sons_budistas/static/js/runtime-main.bba4a0b5.js.map",
     "static/js/2.08ad59d5.chunk.js": "/sons_budistas/static/js/2.08ad59d5.chunk.js",
     "static/js/2.08ad59d5.chunk.js.map": "/sons_budistas/static/js/2.08ad59d5.chunk.js.map",
     "index.html": "/sons_budistas/index.html",
-    "precache-manifest.49224c85d18fc75ef358d216a22d5a53.js": "/sons_budistas/precache-manifest.49224c85d18fc75ef358d216a22d5a53.js",
+    "precache-manifest.fe90f585c1efa16a627872a8f21590fd.js": "/sons_budistas/precache-manifest.fe90f585c1efa16a627872a8f21590fd.js",
     "service-worker.js": "/sons_budistas/service-worker.js",
     "static/js/2.08ad59d5.chunk.js.LICENSE": "/sons_budistas/static/js/2.08ad59d5.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.bba4a0b5.js",
     "static/js/2.08ad59d5.chunk.js",
-    "static/js/main.c2aa6a81.chunk.js"
+    "static/js/main.027d40a0.chunk.js"
   ]
 }
